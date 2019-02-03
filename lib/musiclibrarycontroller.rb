@@ -42,4 +42,12 @@ class MusicLibraryController
       Genre.find_by_name(input).songs.sort_by{|song| song.name}.each_with_index{|song, i| puts "#{i+1}. #{song.artist.name} - #{song.name}"}
     end
   end
+  def play_song
+    songs = Song.all.sort_by{|song| song.name}
+    puts "Which song number would you like to play?"
+    input = (gets.chomp.to_i) - 1
+    if input < songs.length && songs[input].class() == Song
+      puts "Playing #{songs[input].name} by #{songs[input].artist.name}"
+    end
+  end
 end
