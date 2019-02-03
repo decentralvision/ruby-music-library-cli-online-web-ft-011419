@@ -28,6 +28,8 @@ class MusicLibraryController
           self.list_songs_by_artist
         when 'list genre'
           self.list_songs_by_genre
+        when 'play song'
+          self.play_song
       end
     end
   end
